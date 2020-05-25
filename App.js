@@ -236,10 +236,10 @@ async function teamGen() {
 
     let managerCard = fs.readFileSync('./src/Manager.html', 'utf8');
     managerCard = managerCard.replace('{{name}}', name);
-    managerCard = managerCard.replace('{{role}}', role);
     managerCard = managerCard.replace('{{id}}', id);
     managerCard = managerCard.replace('{{email}}', email);
     managerCard = managerCard.replace('{{officeNumber}}', officeNumber);
+    managerCard = managerCard.replace('{{role}}', role);
     console.log(managerCard);
 
     let engineerHTML = [];
@@ -279,7 +279,7 @@ for (let i = 0; i < intern.length; i++) {
     mainHtml = mainHtml.replace('{{engineers}}', engineerHTML);
     mainHtml = mainHtml.replace('{{interns}}', internHTML);
 
-    fs.writeFileSync('generate-page.html', mainHtml);
+    fs.writeFileSync('index.html', mainHtml);
 })
 
 }
