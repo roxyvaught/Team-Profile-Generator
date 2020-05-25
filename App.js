@@ -10,24 +10,57 @@ managerQuestions = [
         type: "input",
         name: "mName",
         message: "What is your name?",
+        validate: nameInput => {
+        if (nameInput) {
+            return true;
+            } else {
+            console.log('Please enter manager\'s name!');
+            return false;
+            }
+        }
     },
 
     {
         type: "input",
         name: "mEmail",
         message: "What is your email address?",
+        validate: nameInput => {
+            //validate email address is in correct format of _@_._
+            if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(nameInput)) {
+                return true;
+                } else {
+                console.log('Please enter a valid email address!');
+                return false;
+                }
+            }
     },
 
     {
         type: "input",
         name: "mID",
         message: "What is your ID number?",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+                } else {
+                console.log('Please enter manager\'s employee ID!');
+                return false;
+                }
+            }
     },
 
     {
         type: "input",
         name: "officeNum",
         message: "What is your office number?",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+                } else {
+                console.log('Please enter a phone number!');
+                return false;
+                }
+            }
     },
 
     {
@@ -65,25 +98,57 @@ async function teamGen() {
                     {
                         type: "input",
                         name: "engineerName",
-                        message: "What is the new engineer's name?"
+                        message: "What is the new engineer's name?",
+                        validate: nameInput => {
+                            if (nameInput) {
+                                return true;
+                                } else {
+                                console.log('Please enter engineer\'s name!');
+                                return false;
+                                }
+                            }
                     },
 
                     {
                         type: "input",
                         name: "engineerID",
-                        message: "What is new engineer's ID number?"
+                        message: "What is new engineer's ID number?",
+                        validate: nameInput => {
+                            if (nameInput) {
+                                return true;
+                                } else {
+                                console.log('Please enter engineer\'s ID!');
+                                return false;
+                                }
+                            }
                     },
 
                     {
                         type: "input",
                         name: "engineerEmail",
-                        message: "What is new engineer's email?"
+                        message: "What is new engineer's email?",
+                        validate: nameInput => {
+                            if (nameInput) {
+                                return true;
+                                } else {
+                                console.log('Please enter engineer\'s email!');
+                                return false;
+                                }
+                            }
                     },
 
                     {
                         type: "input",
                         name: "github",
-                        message: "What is new engineer's github username?"
+                        message: "What is new engineer's github username?",
+                        validate: nameInput => {
+                            if (nameInput) {
+                                return true;
+                                } else {
+                                console.log('Please enter engineer\'s github username!');
+                                return false;
+                                }
+                            }
                     }
 
                 ]).then((engineerData) => {
@@ -103,25 +168,57 @@ async function teamGen() {
                     {
                         type: "input",
                         name: "internName",
-                        message: "What is the new Intern's name?"
+                        message: "What is the new Intern's name?",
+                        validate: nameInput => {
+                            if (nameInput) {
+                                return true;
+                                } else {
+                                console.log('Please enter intern\'s name!');
+                                return false;
+                                }
+                            }
                     },
 
                     {
                         type: "input",
                         name: "internID",
-                        message: "What is new Intern's ID# ?"
+                        message: "What is new Intern's ID number?",
+                        validate: nameInput => {
+                            if (nameInput) {
+                                return true;
+                                } else {
+                                console.log('Please enter intern\'s ID!');
+                                return false;
+                                }
+                            }
                     },
 
                     {
                         type: "input",
                         name: "internEmail",
-                        message: "What is new Intern's email?"
+                        message: "What is new Intern's email?",
+                        validate: nameInput => {
+                            if (nameInput) {
+                                return true;
+                                } else {
+                                console.log('Please enter intern\'s email!')
+                                return false;
+                                }
+                            }
                     },
 
                     {
                         type: "input",
                         name: "school",
-                        message: "What school is the Intern from?"
+                        message: "What school is the Intern from?",
+                        validate: nameInput => {
+                            if (nameInput) {
+                                return true;
+                                } else {
+                                console.log('Please enter intern\'s school!');
+                                return false;
+                                }
+                            }
                     }
 
                 ]).then((internData) => {
