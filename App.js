@@ -4,7 +4,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
-//Manager 
+//inital questions 
 managerQuestions = [
     {
         type: "input",
@@ -245,7 +245,7 @@ async function teamGen() {
     let engineerHTML = [];
     for (let i = 0; i < eng.length; i++) {
 
-    let { name, id, email, github, role } = eng[i];
+    let {name, id, email, github, role} = eng[i];
 
     let engineerCard = fs.readFileSync('./src/Engineer.html', 'utf8');
 
@@ -261,7 +261,7 @@ async function teamGen() {
 let internHTML = [];
 for (let i = 0; i < intern.length; i++) {
 
-    let { name, id, email, school, role } = intern[i];
+    let {name, id, email, school, role} = intern[i];
 
     let internCard = fs.readFileSync('./src/Intern.html', 'utf8');
 
@@ -274,13 +274,13 @@ for (let i = 0; i < intern.length; i++) {
 
 }
 
-            let mainHtml = fs.readFileSync('./src/Employee.html', 'utf8');
-            mainHtml = mainHtml.replace('{{manager}}', managerCard);
-            mainHtml = mainHtml.replace('{{engineers}}', engineerHTML);
-            mainHtml = mainHtml.replace('{{interns}}', internHTML);
+    let mainHtml = fs.readFileSync('./src/Employee.html', 'utf8');
+    mainHtml = mainHtml.replace('{{manager}}', managerCard);
+    mainHtml = mainHtml.replace('{{engineers}}', engineerHTML);
+    mainHtml = mainHtml.replace('{{interns}}', internHTML);
 
-            fs.writeFileSync('generate-page.html', mainHtml);
-        })
+    fs.writeFileSync('generate-page.html', mainHtml);
+})
 
 }
 
